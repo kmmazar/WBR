@@ -30,6 +30,7 @@
       <x:String>System.Dynamic</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -80,7 +81,7 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PowerShellFTPWorkflow" sap:VirtualizedContainerService.HintSize="540.8,1061.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PowerShellFTPWorkflow" sap:VirtualizedContainerService.HintSize="1684.0000000000002,1141.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="scrpt" />
       <Variable x:TypeArguments="sco:Collection(sma:PSObject)" Name="psobj" />
@@ -152,22 +153,23 @@
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokePowerShell.PowerShellVariables>
     </ui:InvokePowerShell>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[_out_ForEach_Generic_1_1__CurrentIndex]" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="478.4,392" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[psobjstr]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[_out_ForEach_Generic_1_1__CurrentIndex]" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="478.4,372" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[psobjstr]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,254.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[currentItem.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[currentItem.ToString]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;endd&quot;]" />
   </Sequence>
 </Activity>
