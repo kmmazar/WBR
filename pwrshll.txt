@@ -1,0 +1,56 @@
+﻿# Define FTP server details
+
+$ftpServer = "ftp://{0}"
+
+$ftpUser = "{1}"
+
+$ftpPass = "{2}"
+
+$remotePath = "{3}"
+
+ 
+
+# Create the FTP request
+
+$uri = New-Object System.Uri("$ftpServer$remotePath")
+
+$ftpRequest = [System.Net.FtpWebRequest]::Create($uri)
+
+$ftpRequest.Method = [System.Net.WebRequestMethods+Ftp]::ListDirectory
+
+$ftpRequest.Credentials = New-Object System.Net.NetworkCredential($ftpUser, $ftpPass)
+
+ 
+
+try {
+
+# Get the response from the server
+
+$ftpResponse = $ftpRequest.GetResponse()
+
+$responseStream = $ftpResponse.GetResponseStream()
+
+$reader = New-Object System.IO.StreamReader($responseStream)
+
+$directoryList = $reader.ReadToEnd().Trim()
+
+ 
+
+# Display the list
+
+$directoryList.Split("`n") | ForEach-Object { $_.Trim() }
+#@( $directoryList.Split("`n") | ForEach-Object { $_.Trim() } )
+
+ 
+
+# Clean up
+
+$reader.Close()
+
+$ftpResponse.Close()
+
+} catch {
+
+Write-Error "Error: $_"
+
+}
