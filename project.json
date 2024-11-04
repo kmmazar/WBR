@@ -1,5 +1,6 @@
 {
   "name": "test_edge",
+  "projectId": "9566cad6-ca02-4c06-941e-37105138508e",
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
@@ -45,7 +46,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
