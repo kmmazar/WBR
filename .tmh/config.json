@@ -1,0 +1,9 @@
+{
+  "issueKeyTestcaseValues": {},
+  "testManagerBasePath": "https://cloud.uipath.com/azar/azar/testmanager_/",
+  "defaultProject": {
+    "id": "a1c12820-4a47-0000-23e9-0b4767599d14",
+    "name": "OmegaABC",
+    "key": "OABC"
+  }
+}
